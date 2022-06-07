@@ -145,7 +145,7 @@ header h1 span {
   transition: all 1s ease-out;
 }
 #intro-page {
-  display: none;
+  display: block;
 }
 
 
@@ -167,6 +167,8 @@ header h1 span {
   align-items: center;
   margin-top: 2rem;
   flex-direction: column;
+  text-align: center;
+   position: relative;
   
 }
 .guess-page input {
@@ -175,6 +177,7 @@ header h1 span {
   line-height: 3rem;
   width:300px;
   color:#4630D9;
+ 
 }
 #check {
   border:none;
@@ -212,6 +215,8 @@ header h1 span {
   font-weight: bold;
   margin-top: 1rem;
   display: block;
+  margin-top: 2rem;
+
 
 }
 #restart:hover {
@@ -223,7 +228,24 @@ header h1 span {
 
 
 
+.conres {
+ display: none;
+  justify-content: center;
+}
+#top-info {
+  position:absolute;
+  width:200px;
+  height:1.8rem;
+  background-color:#4630D9;
+  top:-40px;
+  color:#fff;
+  display: none;
 
+ 
+  
+  z-index: 1;
+
+}
 
 
 
