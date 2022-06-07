@@ -13,13 +13,9 @@ body {
 
 
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  height: 40vh
-}
+/***************** HEADER ****************************/
+/***************** HEADER ****************************/
+/***************** HEADER ****************************/
 header {
   height: 6rem;
   background-color: #404041;
@@ -38,6 +34,22 @@ header h1 span {
   color:#EB008B;
   font-weight: 600;
 }
+/***************** BODY ****************************/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 30vh
+}
+#description {
+  color:#EB008B;
+  text-align:center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  height:4rem;
+  font-weight: bold;
+}
 .difficulty {
   background-color: #4630D9;
   color:#F2B705 ;
@@ -45,11 +57,13 @@ header h1 span {
   width: 200px;
   text-align: center;
   display: inline-block;
- 
+  
   cursor: pointer;
   font-weight: 700;
+  border:none;
   
-
+  
+  
 }
 .difficulty h2  {
   color: #038C7F;
@@ -60,38 +74,47 @@ header h1 span {
   margin: 0;
   padding:0;
 }
-.difficulty:hover {
+.d-hover:hover {
   background-color: rgba(70, 48, 217,0.9);
-
-
+  
+  
 }
-.difficulty:active {
+.d-hover:active {
   transform: scale(.98);
 }
+
+
+
+
+/***************** START ****************************/
+
+
+
 .contain-start {
   display: flex;
   justify-content: center;
   align-items: center;
-
-
-
+  
+  
+  
 }
-#start {
+.start {
   
   width: 250px;
   height: 100px;
   background-color: #F2B705;
   color: #4630D9;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 2.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
-#start:hover {
+.s-hover:hover {
   background-color: rgba(242, 183, 5,0.9);
 }
-#start:active {
+.s-hover:active {
   transform: scale(.98);
 }
 .unselectable {
@@ -103,6 +126,22 @@ header h1 span {
 	user-select: none
 }
 
+.disabled {
+  opacity: .7;
+}
+
+
+
+/*****************INTRO  ****************************/
+
+#intro {
+  color:#EB008B;
+  text-align:center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  height:4rem;
+  font-weight: bold;
+}
 
 
 
@@ -114,10 +153,7 @@ header h1 span {
 
 
 
-
-
-
-
+/***************** MEDİA ****************************/
 
 
 
@@ -136,7 +172,7 @@ header h1 span {
     
   
   }
-  #start {
+  .start {
   
     width: 200px;
     height: 70px;
@@ -151,5 +187,10 @@ header h1 span {
     height: 100%;
     margin-top: 1rem;
   }
-  
+  #description {
+    font-size: 1.5rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
 }
