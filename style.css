@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700;800;900&display=swap');
 
 *{
-
+  
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+ 
 
 }
 body {
@@ -13,7 +14,6 @@ body {
 
 
 }
-/***************** HEADER ****************************/
 /***************** HEADER ****************************/
 /***************** HEADER ****************************/
 header {
@@ -49,6 +49,7 @@ header h1 span {
   font-size: 2rem;
   height:4rem;
   font-weight: bold;
+  transition: all 1s ease-out;
 }
 .difficulty {
   background-color: #4630D9;
@@ -141,7 +142,88 @@ header h1 span {
   font-size: 2rem;
   height:4rem;
   font-weight: bold;
+  transition: all 1s ease-out;
 }
+#intro-page {
+  display: none;
+}
+
+
+
+
+/***************** GUESS-PAGE ****************************/
+#between {
+  color:#EB008B;
+  text-align:center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  height:4rem;
+  font-weight: bold;
+  transition: all 1s ease-out;
+}
+.guess-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  flex-direction: column;
+  
+}
+.guess-page input {
+  height:4rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  width:300px;
+  color:#4630D9;
+}
+#check {
+  border:none;
+  padding:1rem 3rem;
+  font-size: 2rem;
+  color:#4630D9;
+  background-color:#F2B705;
+  font-weight: bold;
+  margin-top: 1rem;
+
+}
+#check:hover {
+  background-color:rgba(242, 183, 5,.9) ;
+}
+#check:active {
+  transform: scale(.98);
+}
+#result {
+  color:#EB008B;
+  text-align:center;
+  margin-top: 2rem;
+  font-size: 3rem;
+  height:4rem;
+  font-weight: 500;
+  transition: all 1s ease-out;
+
+}
+
+#restart {
+  border:none;
+  padding:1rem 3rem;
+  font-size: 2rem;
+  color:#4630D9;
+  background-color:#F2B705;
+  font-weight: bold;
+  margin-top: 1rem;
+  display: block;
+
+}
+#restart:hover {
+  background-color:rgba(242, 183, 5,.9) ;
+}
+#restart:active {
+  transform: scale(.98);
+}
+
+
+
+
 
 
 
@@ -186,11 +268,55 @@ header h1 span {
     align-items:center;
     height: 100%;
     margin-top: 1rem;
+   
   }
   #description {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    height:3rem;
+    
   }
   header h1 {
     font-size: 2rem;
+  }
+  #intro {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    height:3rem;
+
+  }
+  #between {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    height:3rem;
+  }
+
+  .guess-page input {
+    height:2.5rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    width:200px;
+    color:#4630D9;
+  }
+  #check {
+ 
+    padding: .2rem 1rem;
+    font-size: 2rem;
+   
+    font-weight: 500;
+  
+  }
+  #result {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    height:3rem;
+  
+  }
+  #restart {
+    padding: .2rem 1rem;
+    font-size: 2rem;
+   
+    font-weight: 500;
+  
   }
 }

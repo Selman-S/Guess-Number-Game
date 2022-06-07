@@ -19,44 +19,59 @@
   <header>
     <h1> <span>Number</span> Guesser</h1>
   </header>
-  <p id="description">Select a difficulty</p>
-  <div class="container unselectable">
-    <button class="difficulty d-hover" >
+  <div id="intro-page">
+
+
+    <p id="description">Select a difficulty</p>
+    <div class="container unselectable">
+      <button class="difficulty d-hover">
+
+        <h2>
+          EASY
+        </h2>
+        <p>
+          1 to 10
+        </p>
+      </button>
+      <button class="difficulty d-hover ">
+        <h2>
+          MEDIUM
+        </h2>
+        <p>
+          1 to 100
+        </p>
+      </button>
+      <button class="difficulty d-hover ">
+        <h2>
+          HARD
+        </h2>
+        <p>
+          1 to 1000
+        </p>
+      </button>
+
+    </div>
+    <div class="contain-start unselectable">
+
+      <div id="start" class="start disabled" disabled>Start Game</div>
+
+    </div>
+  </div>
+  <div class="guess-page">
+
+    <p id="intro">Guess The Number (1 - 100)</p>
+    <p id="between"></p>
+    <div class="guess-page">
+      <input type="number" class="guess form-control " min="1">
       
-      <h2>
-        EASY
-      </h2>
-      <p>
-        1 to 10
-      </p>
-    </button>
-    <button class="difficulty d-hover " >
-      <h2>
-        MEDIUM
-      </h2>
-      <p>
-        1 to 100
-      </p>
-    </button>
-    <button class="difficulty d-hover " >
-      <h2>
-        HARD
-      </h2>
-      <p>
-        1 to 1000
-      </p>
-    </button>
+    </div>
+   
+      <button id="check">Check</button>
+    <p id="result">Congratulations</p>
+    <button id="restart">Restart</button>
+    
     
   </div>
-    <div  class="contain-start unselectable">
-      
-      <div class="start disabled" disabled>Start Game</div>
-
-  </div>
-  <p id="intro"></p>
-
-
-
 
   <script src="./app.js"></script>
 

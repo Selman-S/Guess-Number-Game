@@ -1,6 +1,6 @@
 
 const difficulty= document.querySelectorAll('.difficulty');
-let intro =document.getElementById("intro");
+
 
 
 
@@ -29,7 +29,9 @@ difficulty.forEach(function (node,i) {
 
       document.querySelector('#intro').innerText = `Guess The Number (1 -  ${sessionStorage.getItem('diffic')})`
       document.querySelector('.start').disabled = false;
-      a.target.parentNode.disabled =true;
+      a.target.parentNode.disabled =true; 
+      a.target.parentNode.nextElementSibling.disabled =true; 
+      a.target.parentNode.nextElementSibling.nextElementSibling.disabled =true;
       
     }if(i==1){
       a.target.parentNode.nextElementSibling.classList.add('disabled');
@@ -50,6 +52,8 @@ difficulty.forEach(function (node,i) {
       document.querySelector('#intro').innerText = `Guess The Number (1 -  ${sessionStorage.getItem('diffic')})`
       document.querySelector('.start').disabled = false;
       a.target.parentNode.disabled =true;
+      a.target.parentNode.nextElementSibling.disabled =true;
+      a.target.parentNode.previousElementSibling.disabled =true;
       
       
       
@@ -72,9 +76,11 @@ difficulty.forEach(function (node,i) {
 
       sessionStorage.setItem('diffic',1000);
 
-      document.querySelector('#intro').innerText = `Guess The Number (1 -  ${sessionStorage.getItem('diffic')})`
+      document.querySelector('#intro').innerText = `Guess The Number (1 -  ${sessionStorage.getItem('diffic')})`;
       document.querySelector('.start').disabled = false;
       a.target.parentNode.disabled =true;
+      a.target.parentNode.previousElementSibling.previousElementSibling.disabled =true;
+      a.target.parentNode.previousElementSibling.disabled =true;
     }
     
   })
@@ -83,5 +89,18 @@ difficulty.forEach(function (node,i) {
   
 })
 
+const start = document.getElementById('start');
 
-console.log(sessionStorage.getItem('diffic'));
+
+start.addEventListener('click', () =>{
+  document.getElementById("intro-page").style.display="none";
+  document.querySelector(".guess").max = "100";
+  document.querySelector('#intro').innerText = `Guess The Number `
+  document.querySelector("#between").innerText = `Please enter a number between 1 and ${sessionStorage.getItem('diffic')} `;
+
+
+  
+})
+
+
+
