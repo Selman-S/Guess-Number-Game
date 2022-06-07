@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+body {
+  background-color: #05F2DB;
+  font-family: 'Source Code Pro', monospace;
+
+
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 40vh
+}
+header {
+  height: 6rem;
+  background-color: #404041;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+header h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #fff;
+}
+header h1 span {
+  color:#EB008B;
+  font-weight: 600;
+}
+.difficulty {
+  background-color: #4630D9;
+  color:#F2B705 ;
+  font-size: 2rem;
+  width: 200px;
+  text-align: center;
+  display: inline-block;
+ 
+  cursor: pointer;
+  font-weight: 700;
+  
+
+}
+.difficulty h2  {
+  color: #038C7F;
+  margin:0;
+  padding: 0;
+}
+.difficulty p  {
+  margin: 0;
+  padding:0;
+}
+.difficulty:hover {
+  background-color: rgba(70, 48, 217,0.9);
+
+
+}
+.difficulty:active {
+  transform: scale(.98);
+}
+.contain-start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+}
+#start {
+  
+  width: 250px;
+  height: 100px;
+  background-color: #F2B705;
+  color: #4630D9;
+  font-weight: 900;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#start:hover {
+  background-color: rgba(242, 183, 5,0.9);
+}
+#start:active {
+  transform: scale(.98);
+}
+.unselectable {
+  -moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 770px) {
+  .difficulty {
+  
+   
+    font-size: 1rem;
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+   
+    cursor: pointer;
+    font-weight: 700;
+    
+  
+  }
+  #start {
+  
+    width: 200px;
+    height: 70px;
+    margin-top: 1rem;
+   
+    font-size: 1.5rem;
+    
+  }
+  .container {
+    flex-direction: column;
+    align-items:center;
+    height: 100%;
+    margin-top: 1rem;
+  }
+  
+}
