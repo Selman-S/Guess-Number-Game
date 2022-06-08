@@ -95,6 +95,7 @@ header h1 span {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   
   
   
@@ -273,8 +274,22 @@ header h1 span {
   z-index: 1;
 
 }
-
-
+#change-dif {
+  position:absolute;
+  top:200px;
+  border:none;
+  font-size: 1.5rem;
+  padding:5px;
+  background-color:#4630D9 ;
+  color: rgb(242, 183, 5);
+  display: none;
+}
+#change-dif:hover {
+  background-color:rgba(70, 48, 217,0.9);
+}
+#change-dif:active {
+  transform: scale(.98);
+}
 
 
 

@@ -34,12 +34,14 @@ difficulty.forEach(function (node,i) {
       a.target.parentNode.disabled =true; 
       a.target.parentNode.nextElementSibling.disabled =true; 
       a.target.parentNode.nextElementSibling.nextElementSibling.disabled =true;
+      document.getElementById('change-dif').style.display = 'block'
       
     }if(i==1){
       a.target.parentNode.nextElementSibling.classList.add('disabled');
       a.target.parentNode.previousElementSibling.classList.add('disabled');
       a.target.parentNode.nextElementSibling.classList.remove('d-hover');
       a.target.parentNode.previousElementSibling.classList.remove('d-hover');
+      document.getElementById('change-dif').style.display = 'block'
 
       a.target.parentNode.classList.remove('d-hover');
       document.querySelector('#chance span').innerText = 7
@@ -65,6 +67,7 @@ difficulty.forEach(function (node,i) {
      
     }if(i==2){
       a.target.parentNode.previousElementSibling.classList.add('disabled');
+      document.getElementById('change-dif').style.display = 'block'
       a.target.parentNode.previousElementSibling.previousElementSibling.classList.add('disabled');
       a.target.parentNode.previousElementSibling.classList.remove('d-hover');
       a.target.parentNode.previousElementSibling.previousElementSibling.classList.remove('d-hover');
@@ -208,14 +211,11 @@ start.addEventListener('click', () =>{
 
 //*********************  RESTART  *********************************/ 
 
-document.getElementById('restart').addEventListener('click', ()=>{
+document.getElementById('restart').addEventListener('click', restart)
 
+function restart() {
+  window.location.reload(false);
   
-   window.location.reload(false);
-    
-  
-  
-})
+}
 
-
-
+document.getElementById('change-dif').addEventListener('click',restart)
