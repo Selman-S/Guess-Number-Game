@@ -162,15 +162,26 @@ header h1 span {
   transition: all 1s ease-out;
 }
 .guess-page {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
   flex-direction: column;
   text-align: center;
-   position: relative;
+   
+   
   
 }
+.guess-page1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+   position: relative;
+   
+  
+}
+
 .guess-page input {
   height:4rem;
   font-size: 2rem;
@@ -234,12 +245,13 @@ header h1 span {
 }
 #top-info {
   position:absolute;
-  width:200px;
+  width:260px;
   height:1.8rem;
   background-color:#4630D9;
   top:-40px;
   color:#fff;
-  display: none;
+  visibility: hidden;
+  transition: all 1s ease-out;
 
  
   

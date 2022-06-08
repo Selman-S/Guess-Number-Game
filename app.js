@@ -3,7 +3,7 @@ const difficulty= document.querySelectorAll('.difficulty');
 
 
 
-
+//********************************** SELECT *********************/ 
 difficulty.forEach(function (node,i) {
 
   node.addEventListener('click',(a)=>{
@@ -89,6 +89,9 @@ difficulty.forEach(function (node,i) {
   
 })
 
+//********************* START ****************************/ 
+
+
 const start = document.getElementById('start');
 
 
@@ -97,7 +100,12 @@ start.addEventListener('click', () =>{
 
     document.getElementById("intro-page").style.display="none";
 
-    document.querySelector(".guess").max = "100";
+    document.querySelector(".guess").max =`${sessionStorage.getItem('diffic')}`;
+
+
+    
+    
+    
 
     document.querySelector('#intro').innerText = `Guess The Number `;
 
@@ -108,18 +116,54 @@ start.addEventListener('click', () =>{
     console.log(randomNum);
 
     document.querySelector('.guess-page').style.display="flex";
-    document.querySelector('.guess.form-control').autofocus=true;
-    document.getElementById('check').addEventListener('click', () =>{
-      if(document.querySelector('.guess').value>100 || document.querySelector('.guess').value>0){
+    document.querySelector('.guess.form-control').focus();
 
-      }
-      if(document.querySelector('.guess').value==randomNum){
-        document.getElementById("result").innerText = "Congratulations.. You win";
-        document.querySelector('.input-page').style.display="none";
-        document.querySelector('.conres').style.display="flex";
-        
-      }
+    //*********************  CHECK  *********************************/ 
+
+
+
+    document.getElementById('check').addEventListener('click', () =>{
       
+ 
+      
+       if(parseInt(document.querySelector('.guess').value) < +(sessionStorage.getItem('diffic'))+1 && parseInt(document.querySelector('.guess').value) >0){
+
+        if(document.querySelector('.guess').value==randomNum){
+          document.getElementById("result").innerText = "Congratulations.. You win";
+          document.querySelector('.input-page').style.display="none";
+          document.querySelector('.conres').style.display="flex";
+          
+        }
+        if(document.querySelector('.guess').value<randomNum){
+          document.getElementById("result").innerText = "Try a higher number";
+
+          document.querySelector("#between").innerText = `Please enter a number between ${document.querySelector('.guess').value} and ${sessionStorage.getItem('diffic')} `;
+
+          document.querySelector('.guess').value="";
+          document.querySelector('.guess').focus();
+          
+        }
+        
+       }else {
+
+        
+        
+        document.querySelector('#top-info').innerText=`Please between 0 and ${sessionStorage.getItem('diffic')}`;
+        document.querySelector('#top-info').style.visibility="visible";
+        
+        function delayVisible(){
+          document.querySelector('#top-info').style.visibility="hidden";
+          
+        }
+        setTimeout(delayVisible,3000);
+        document.querySelector('.guess').value="";
+        document.querySelector('.guess').focus();
+        
+        
+
+        
+          
+       }
 
   
     })
