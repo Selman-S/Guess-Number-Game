@@ -27,6 +27,8 @@ difficulty.forEach(function (node,i) {
 
       sessionStorage.setItem('diffic',10);
 
+      document.querySelector('#chance span').innerText = 5
+
       document.querySelector('#intro').innerText = `Guess The Number (1 -  ${sessionStorage.getItem('diffic')})`
       document.querySelector('.start').disabled = false;
       a.target.parentNode.disabled =true; 
@@ -40,6 +42,7 @@ difficulty.forEach(function (node,i) {
       a.target.parentNode.previousElementSibling.classList.remove('d-hover');
 
       a.target.parentNode.classList.remove('d-hover');
+      document.querySelector('#chance span').innerText = 7
 
       document.getElementById("description").innerHTML = "Let's start";
 
@@ -67,6 +70,7 @@ difficulty.forEach(function (node,i) {
       a.target.parentNode.previousElementSibling.previousElementSibling.classList.remove('d-hover');
 
       a.target.parentNode.classList.remove('d-hover');
+      document.querySelector('#chance span').innerText = 10
 
       document.getElementById("description").innerHTML = "Let's start";
 
@@ -101,9 +105,10 @@ start.addEventListener('click', () =>{
     document.getElementById("intro-page").style.display="none";
 
     document.querySelector(".guess").max =`${sessionStorage.getItem('diffic')}`;
+    localStorage.setItem('min',0);
+    localStorage.setItem('max',sessionStorage.getItem('diffic'));
 
-
-    
+   
     
     
 
@@ -119,66 +124,97 @@ start.addEventListener('click', () =>{
     document.querySelector('.guess.form-control').focus();
 
     //*********************  CHECK  *********************************/ 
+    document.getElementById('check').addEventListener('click', guessTheNumber);
+    document.querySelector('.guess').addEventListener('keydown',(event)=>{
+      if (event.key == 'Enter'){
+          guessTheNumber();
+      }
+  })
+  
 
-
-
-    document.getElementById('check').addEventListener('click', () =>{
-      
- 
-      
-       if(parseInt(document.querySelector('.guess').value) < +(sessionStorage.getItem('diffic'))+1 && parseInt(document.querySelector('.guess').value) >0){
-
-        if(document.querySelector('.guess').value==randomNum){
-          document.getElementById("result").innerText = "Congratulations.. You win";
-          document.querySelector('.input-page').style.display="none";
-          document.querySelector('.conres').style.display="flex";
+    function guessTheNumber(){
+      if(parseInt(document.querySelector('#chance span').innerText)>0 ){
+        
+        
+        
+        if(parseInt(document.querySelector('.guess').value) < +(sessionStorage.getItem('diffic'))+1 && parseInt(document.querySelector('.guess').value) >0){
+        
           
-        }
-        if(document.querySelector('.guess').value<randomNum){
-          document.getElementById("result").innerText = "Try a higher number";
+          
+          if(document.querySelector('.guess').value==randomNum){
+            document.getElementById("result").innerText = "Congratulations.. You win";
+            document.querySelector('.input-page').style.display="none";
+            document.querySelector('.conres').style.display="flex";
+          
+          }
+          if(document.querySelector('.guess').value<randomNum){
+            document.getElementById("result").innerText = "Try a higher number";
+            localStorage.setItem('min',document.querySelector('.guess').value);
+            document.querySelector("#between").innerText = `Please enter a number between ${localStorage.getItem('min')} and ${localStorage.getItem('max')} `;
 
-          document.querySelector("#between").innerText = `Please enter a number between ${document.querySelector('.guess').value} and ${sessionStorage.getItem('diffic')} `;
-
+            
+            document.querySelector('.guess').value="";
+            document.querySelector('.guess').focus();
+            document.querySelector('#chance span').innerText -= 1
+            
+          }
+          if(document.querySelector('.guess').value>randomNum){
+            document.getElementById("result").innerText = "Try a lower number";
+            localStorage.setItem('max',document.querySelector('.guess').value);
+            
+            document.querySelector("#between").innerText = `Please enter a number between ${localStorage.getItem('min')} and ${localStorage.getItem('max')}`; 
+            
+            document.querySelector('.guess').value="";
+            document.querySelector('.guess').focus();
+            document.querySelector('#chance span').innerText -= 1
+            
+          }
+          
+          
+       }else {
+         
+         
+         
+         document.querySelector('#top-info').innerText=`Please between 0 and ${sessionStorage.getItem('diffic')}`;
+         document.querySelector('#top-info').style.visibility="visible";
+         
+         function delayVisible(){
+           document.querySelector('#top-info').style.visibility="hidden";
+           
+          }
+          setTimeout(delayVisible,3000);
           document.querySelector('.guess').value="";
           document.querySelector('.guess').focus();
           
-        }
-        
-       }else {
-
-        
-        
-        document.querySelector('#top-info').innerText=`Please between 0 and ${sessionStorage.getItem('diffic')}`;
-        document.querySelector('#top-info').style.visibility="visible";
-        
-        function delayVisible(){
-          document.querySelector('#top-info').style.visibility="hidden";
+          
+          
+          
           
         }
-        setTimeout(delayVisible,3000);
-        document.querySelector('.guess').value="";
-        document.querySelector('.guess').focus();
-        
-        
-
-        
-          
-       }
-
-  
-    })
+      }
+      if(parseInt(document.querySelector('#chance span').innerText) == 0){
+        document.getElementById("result").innerText = "You lose..";
+        document.querySelector('.input-page').style.display="none";
+        document.querySelector('.conres').style.display="flex";
+      }
+    }
+    
+   
   }
-
-
+  
+  
   
 })
+
+//*********************  RESTART  *********************************/ 
+
 document.getElementById('restart').addEventListener('click', ()=>{
-  document.querySelector('.guess-page').style.display="none";
-  document.getElementById("intro-page").style.display="block";
+
   
-
-
- 
+   window.location.reload(false);
+    
+  
+  
 })
 
 

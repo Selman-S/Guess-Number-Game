@@ -162,7 +162,7 @@ header h1 span {
   transition: all 1s ease-out;
 }
 .guess-page {
-  display: block;
+  display: none;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
@@ -197,9 +197,24 @@ header h1 span {
   color:#4630D9;
   background-color:#F2B705;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 3rem;
 
 }
+
+
+#chance {
+  position:absolute;
+  width:200px;
+  transform: translateY(180%);
+  height:1.8rem;
+  background-color:#4630D9;
+  
+  color:#fff;
+
+  transition: all 1s ease-out;
+}
+
+
 #check:hover {
   background-color:rgba(242, 183, 5,.9) ;
 }
@@ -352,5 +367,16 @@ header h1 span {
    
     font-weight: 500;
   
+  }
+  #chance {
+    position:absolute;
+    width:150px;
+    transform: translateY(140%);
+    height:1.8rem;
+    background-color:#4630D9;
+    font-size: .8rem;
+    color:#fff;
+  
+    transition: all 1s ease-out;
   }
 }
